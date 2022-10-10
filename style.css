@@ -1,0 +1,32 @@
+/*
+Theme Name: CustomTheme
+Text Domain: customtheme
+Version: 1.0
+Description: customtheme for wordpress
+Tags: CustomTheme, newTheme, responsive
+Author: Lucas Oliveira
+*/
+
+.blue, #blue { 
+    background-color: blue !important;
+}
+
+.logo-img {
+    max-width: 200px;
+}
+
+.menu-main-menu {
+    display: flex !important;
+}
+
+.menu-item-has-children {
+    padding-right: 10px;
+}
+
+.sombra {
+    box-shadow: 10px black;
+}
+
+.tags a {
+    background-color: aqua;
+}
