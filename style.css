@@ -7,6 +7,36 @@ Tags: CustomTheme, newTheme, responsive
 Author: Lucas Oliveira
 */
 
+:root {
+    --white: #ffffff;
+    --footer-color-1: #061B2B;
+    --footer-color-2: #031625;
+    --button-footer:#EA9421;
+    --button-footer-hover:#c57c1c;
+    --bg-nav: #F8FAFC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.font-normal {
+    font-size: 18px !important;
+}
+
+.font-big {
+    font-size: 30px;
+}
+
+.white {
+    color: var(--white);
+}
+
+
+
 .blue, #blue { 
     background-color: blue !important;
 }
@@ -29,4 +59,65 @@ Author: Lucas Oliveira
 
 .tags a {
     background-color: aqua;
+}
+
+.box {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* nav */
+.nav-logo {
+    width: 120px;
+}
+
+/* Footer */
+
+.footer1 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.footer2  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.button-footer {
+    background-color: var(--button-footer);
+    
+}
+
+.map-link {
+    text-decoration: none;
+    background-color: var(--button-footer);
+    color: var(--white);
+    padding: 9px 20px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.map-link:hover {
+    color: var(--white);
+    background-color: var(--button-footer-hover);
+}
+
+.links-uteis {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer-links {
+    margin-right: 40px;
+    text-decoration: none;
+}
+
+.footer-color1 {
+    background-color: var(--footer-color-1);
+}
+
+.footer-color2 {
+    background-color: var(--footer-color-2);
 }

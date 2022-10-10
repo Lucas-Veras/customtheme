@@ -79,5 +79,6 @@
     }
     echo '</ul>';
   ?>
+  </div>
 
 <?php get_footer(); ?>
