@@ -1,10 +1,10 @@
 <?php
-// Template Name: sobre
+// Template Name: Conheça o Lais
 ?>
 <?php get_header(); ?>
 
 <section>
-    <div class="banner-sobre">
+    <div class="banner-lais">
         <h2 class="fw800 font-big mt-85 white text-center mb-5 noticias-title"><?php the_title(); ?></h2>
     </div>
     <div class="box single-post-grid px-3 mb-3">

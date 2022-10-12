@@ -1,145 +1,59 @@
 <?php get_header(); ?>
 
-<article class="container content px-3 py-5 p-md-5">
     <?php
         $counter = 0;
         if ( have_posts() ) {
             while ( have_posts() ) {
                 the_post();
     ?>
-    <!-- Post -->
-    <div class="row mt-5">
-        <div class="col-md-4 mb-4">
-            <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
-                <?php the_post_thumbnail( 'medium-large', array( 'class'=> 'img-fluid')); ?>
-                <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
+<!-- Post -->
+<section class="section single-page-header mt-80-header-single" id="single-page-header">
+    <div class="single-page-header-wrap">
+      <div class="container">
+        <div class="row my-3">
+          <div class="col-lg-12">
+            <div class="single-page-header-title">
+              <h1 class="font-big"><?php the_title(); ?></h1>
             </div>
+          </div>
         </div>
-
-        <div class="col-md-8 mb-4">
-            <h5 class="tags"><?php the_title(); ?> - <?php the_date(); ?> - <?php the_tags();?> - <?php comments_number(); ?></h5>
-            <p>
-                <?php
-                if (!is_home() ) {
-                    the_content();
-                } else {
-                    the_excerpt();
-                ?>
-                    <?php echo the_date() ?>
-            </p>
-
-            <a href="<?php echo get_permalink() ?>" >
-                <button type="button" class="btn btn-primary float-end me-5">Read more</button>
-            </a>
-                <?php }?> 
+      </div>
+    </div>
+</section>
+<section class="box single-post-grid px-3">
+    <div>
+        <div class="mb-3 center-singe-img">
+            <?php the_post_thumbnail( 'large', array( 'class'=> 'img-fluid')); ?>
+        </div>
+        <div>
+        <p>Por <?php the_author() ?></p>
+        <p><?php the_content(); ?></p>
         </div>
     </div>
+    <div>
+    <div class="mb-5">
+        <?php get_search_form() ?>
+        </div>
+        <div class="fb-page" data-href="https://www.facebook.com/laishuol/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+            <blockquote cite="https://www.facebook.com/laishuol/" class="fb-xfbml-parse-ignore">
+                <a href="https://www.facebook.com/laishuol/">
+                    LAIS (HUOL)
+                </a>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+
+
 <?php
     } // end while
 } // end if
 ?>
 
-<div class="main-wrapper">
-    <article class="content px-3 py-5 p-md-5">
-        <div class="container">
-            <div class="content-body">
-                <figure class="blog-banner">
-                    <a href="#"><img class="img-fluid" src="images/blog-post-banner.jpg" alt="image"></a>
-                    <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="#" target="_blank">URL
-                            Here</a></figcaption>
-                </figure>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-                    mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-                    quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
-                    rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
-                    Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
-                    tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. </p>
 
 
-                <h3 class="mt-5 mb-3">Typography</h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-                    mus.</p>
-                <h5 class="my-3">Bullet Points:</h5>
-                <ul class="mb-5">
-                    <li class="mb-2">Lorem ipsum dolor sit amet consectetuer.</li>
-                    <li class="mb-2">Aenean commodo ligula eget dolor.</li>
-                    <li class="mb-2">Aenean massa cum sociis natoque penatibus.</li>
-                </ul>
-                <ol class="mb-5">
-                    <li class="mb-2">Lorem ipsum dolor sit amet consectetuer.</li>
-                    <li class="mb-2">Aenean commodo ligula eget dolor.</li>
-                    <li class="mb-2">Aenean massa cum sociis natoque penatibus.</li>
-                </ol>
-                <h5 class="my-3">Quote Example:</h5>
-                <blockquote class="blockquote m-lg-5 py-3 pl-4 px-lg-5">
-                    <p class="mb-2">You might not think that programmers are artists, but programming is an
-                        extremely creative profession. It's logic-based creativity.</p>
-                    <footer class="blockquote-footer">John Romero</footer>
-                </blockquote>
-
-                <h5 class="my-3">Table Example:</h5>
-                <table class="table table-striped my-5">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-
-                <h3 class="mt-5 mb-3">Video Example</h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-                    mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-                    quis enim. </p>
-
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SPFDLHNm5KQ" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
-            </div>
-
-            <nav class="blog-nav nav nav-justified my-5">
-                <a class="nav-link-prev nav-item nav-link rounded-left" href="index.html">Previous<i
-                        class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-                <a class="nav-link-next nav-item nav-link rounded-right" href="page.html">Next<i
-                        class="arrow-next fas fa-long-arrow-alt-right"></i></a>
-            </nav>
-        </div>
-        <!--//container-->
-    </article>
-</div>
-
-<?php comments_template(); ?>
+<?php /*comments_template();*/ ?>
 
 </article>
 

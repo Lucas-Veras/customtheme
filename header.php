@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="<?php bloginfo('charset'); ?>">
     <?php wp_head(); ?>
+    
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdn.es.gov.br/fonts/font-awesome/css/font-awesome.min.css">
 
     <!-- GTranslate: https://gtranslate.io/ -->
     <style>a.glink img {margin-right:2px;}</style>
@@ -18,12 +21,31 @@
     function GTranslateFireEvent(element,event){try{if(document.createEventObject){var evt=document.createEventObject();element.fireEvent('on'+event,evt)}else{var evt=document.createEvent('HTMLEvents');evt.initEvent(event,true,true);element.dispatchEvent(evt)}}catch(e){}}
     function doGTranslate(lang_pair){if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];if(GTranslateGetCurrentLang() == null && lang == lang_pair.split('|')[0])return;if(typeof ga=='function'){ga('send', 'event', 'GTranslate', lang, location.hostname+location.pathname+location.search);}var teCombo;var sel=document.getElementsByTagName('select');for(var i=0;i<sel.length;i++)if(sel[i].className.indexOf('goog-te-combo')!=-1){teCombo=sel[i];break;}if(document.getElementById('google_translate_element2')==null||document.getElementById('google_translate_element2').innerHTML.length==0||teCombo.length==0||teCombo.innerHTML.length==0){setTimeout(function(){doGTranslate(lang_pair)},500)}else{teCombo.value=lang;GTranslateFireEvent(teCombo,'change');GTranslateFireEvent(teCombo,'change')}}
     </script>
+  <!-- Facebook -->
+  <meta property="og:type" content="government"/>
+  <meta property="og:title" content="3ª Conferência Internacional de Inovação em Saúde"/>
+  <meta property="og:url" content="http://inovacaotecnologica.lais.huol.ufrn.br"/>
+  <meta property="og:site_name" content="https://www.facebook.com/LAIS.HUOL/"/>
+  <meta property="og:image" content="http://inovacaotecnologica.lais.huol.ufrn.br/wp-content/themes/conferencia/img/thumb-default.jpg"/>
+  <meta property="og:description" content="Sistemas Resilientes: o impacto social da inovação em saúde"/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta property="fb:app_id" content="168070550573064"/>
+  <meta property="fb:admins" content=""/>
 
-
+  <script>
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0&appId=165938233864118&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 </head> 
 <body>
+  <div id="fb-root"></div>
   <header>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" id="mainNav">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white" id="mainNav">
     <div class="container-fluid px-5">
       <a class="navbar-brand js-scroll-trigger  mr-0" href="<?php echo get_site_url();?>">
           <img src="<?php echo get_template_directory_uri()?>/assets/images/logoLais.png" class="nav-image no-filter img-fluid" alt="LAIS(HUOL)" >

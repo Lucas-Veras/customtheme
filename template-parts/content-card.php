@@ -5,10 +5,10 @@
     </a>
     <div class="card-body">
         <a href="<?php echo get_permalink() ?>" class="noticia-card-link fw800">
-            <h5 class="card-title font-medium cor-font-3"><?php the_title(); ?></h5>
+            <h5 class="card-title font-medium cor-font-3"><?php echo the_title(); ?></h5>
         </a>
         <a href="<?php echo get_permalink() ?>" class="noticia-card-link">
-            <p class="card-text textResumo"><?php the_excerpt(); ?></p>
+            <p class="card-text textResumo">Por <?php the_author() ?> <?php echo the_excerpt(); ?></p>
         </a>
     </div>
 </div>

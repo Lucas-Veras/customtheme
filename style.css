@@ -19,6 +19,10 @@ Author: Lucas Oliveira
     --faixa: #7DC143;
     --faixa-hover: #679e37;
     --faixa2: #E5E5E5;
+    --single-text: #333;
+    --backgorund-color-blog: #1B75BC;
+    --background-color-sobre: #D88CB6;
+    --background-color-lais: #E0C22A;
 }
 
 * {
@@ -53,7 +57,7 @@ Author: Lucas Oliveira
 }
 
 .font-big {
-    font-size: 30px;
+    font-size: 30px !important;
 }
 
 @media (max-width: 800px) {
@@ -66,7 +70,7 @@ Author: Lucas Oliveira
   }
 
   .font-big {
-      font-size: 24px;
+      font-size: 24px !important;
   }
 }
 .fw600 {
@@ -85,6 +89,10 @@ Author: Lucas Oliveira
   margin-bottom: 80px;
 }
 
+.mt-85 {
+  margin-top: 85px;
+}
+
 @media (max-width: 800px) {
   .mb-80 {
     margin-bottom: 40px;
@@ -93,20 +101,6 @@ Author: Lucas Oliveira
 
 
 
-
-
-
-.blue, #blue { 
-    background-color: blue !important;
-}
-
-.logo-img {
-    max-width: 200px;
-}
-
-.menu-main-menu {
-    display: flex !important;
-}
 
 .menu-item-has-children {
     padding-right: 10px;
@@ -139,7 +133,7 @@ Author: Lucas Oliveira
     background-color: var(--button-footer-hover) !important;
 }
 
-/* front-page */
+/* front-page - banner */
 
 .img-box-initial {
     display: flex;
@@ -201,16 +195,21 @@ Author: Lucas Oliveira
     }
 }
 
+/* front page - noticias */
+
 .noticias-content {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .noticia-card {
   transition: 0.5s;
   width: 100%;
+}
+
+.noticia-card:hover .noticia-card-link h5 {
+  text-decoration: underline;
 }
 
 .noticia-card-link {
@@ -221,19 +220,136 @@ Author: Lucas Oliveira
   color: #626262;
 }
 
-@media (min-width: 800px) {
-  .noticia-card:hover {
-    width: 120%;
-  }
-}
-
 @media (max-width: 800px) {
   .noticias-content {
     flex-direction: column;
   }
+  .noticias-content {
+    grid-template-columns: 1fr;
+  }
 }
 
+.ver-mais-noticias {
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--home--inital-hover);
+  padding: 15px 40px;
+  border-radius: 5px;
+}
 
+.ver-mais-noticias:hover {
+  color: var(--white);
+  background-color: var(--home-initial);
+}
+
+/* index - Archive - noticias*/
+
+.banner-noticias {
+  background-color: var(--backgorund-color-blog);
+  background-image: url("assets/images/fundo-noticia1.svg"), url("assets/images/fundo-noticia2.svg");
+  background-position: left bottom, right top;
+  background-size: 30%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 850px) {
+  .banner-noticias {
+    background-size: 50%;
+  }
+}
+
+.noticias-title {
+  padding: 70px 0px;
+}
+
+/* page-sobre */
+
+.banner-sobre {
+  background-color: var(--background-color-sobre);
+  background-image: url("assets/images/fundo-sobre2.svg"), url("assets/images/fundo-sobre1.svg");
+  background-position: left bottom, right top;
+  background-size: 30%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 850px) {
+  .banner-sobre {
+    background-size: 50%;
+  }
+}
+
+/* Conheça o lais */
+
+.banner-lais {
+  background-color: var(--background-color-lais);
+  background-image: url("assets/images/fundo-lais2.svg"), url("assets/images/fundo-lais1.svg");
+  background-position: left bottom, right top;
+  background-size: 30%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 850px) {
+  .banner-lais {
+    background-size: 50%;
+  }
+}
+
+/* searchform */
+
+.input-pesquisar {
+  background-image: url("assets/images/lupa.svg");
+  background-repeat: no-repeat;
+  background-color: var(--faixa);
+  background-position: center;
+  background-size: 15px;
+  width: 40px;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.input-pesquisar:hover {
+  background-color: var(--faixa-hover);
+}
+
+/* Single page */
+
+.mt-80-header-single {
+  margin-top: 100px !important;
+}
+
+.single-post-grid {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 30px;
+}
+
+.center-singe-img {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .single-post-grid {
+    grid-template-columns: 1fr;
+    gap:10px
+  }
+}
+
+/* 404 page */
+
+#page-not-found {
+  margin-top: 150px !important;
+}
+
+.box-404 {
+  width: 60%;
+}
+
+@media (max-width: 800px) {
+  .box-404 {
+    width: 100%;
+  }
+}
 
 /* Footer */
 

@@ -1,44 +1,42 @@
 <?php
-// Template Name: blog
+
 ?>
 <?php get_header(); ?>
 
-<article class="container content px-3 py-5 p-md-5">
+<section>
+    <div class="banner-noticias">
+        <h2 class="fw800 font-big mt-85 white text-center mb-5 noticias-title"><?php pll_e('NOTÍCIAS');?></h2>
+    </div>
+    <div class="box px-xxl-0 px-3">
+        <h5 class="mb-5">Pesquisou por: <?php echo get_search_query(); ?></h5>
+        <div class="noticias-content px-xxl-0 px-3 mb-5">
 
-    <?php
-        $counter = 0;
-        if ( have_posts() ) {
-            while ( have_posts() ) {
-                the_post();           
-    ?>
-    <!-- Post -->
-    <div class="row mt-5">
-        <div class="col-md-4 mb-4">
-            <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
-                <?php the_post_thumbnail( 'medium-large', array( 'class'=> 'img-fluid')); ?>
-                <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-md-8 mb-4">
-            <h5 class="tags"><?php the_title(); ?> - <?php the_date(); ?> - <?php the_tags();?> - <?php comments_number(); ?></h5>
-            <p>
-                <?php
-                    the_excerpt();
-                ?>
-                    <?php echo the_date() ?>
-            </p>
-
-            <a href="<?php echo get_permalink() ?>" >
-                <button type="button" class="btn btn-primary float-end me-5">Read more</button>
-            </a>
-              
+            <?php
+                $counter = 0;
+                if ( have_posts() ) {
+                    while ( have_posts() ) {
+                        the_post();           
+            ?>
+                <!-- Post -->
+                <div class="card noticia-card">
+                    <a href="<?php echo get_permalink() ?>">
+                        <?php the_post_thumbnail( 'medium-large', array( 'class'=> 'img-fluid')); ?>
+                    </a>
+                    <div class="card-body">
+                        <a href="<?php echo get_permalink() ?>" class="noticia-card-link fw800">
+                            <h5 class="card-title font-medium cor-font-3"><?php echo the_title(); ?></h5>
+                        </a>
+                        <a href="<?php echo get_permalink() ?>" class="noticia-card-link">
+                            <p class="card-text textResumo">Por <?php the_author() ?> <?php echo the_excerpt(); ?></p>
+                        </a>
+                    </div>
+                </div>
+            <?php  }}
+                else { ?>
+                    <h5>Nenhum resultado encontrado</h5>
+             <?php   } ?>
         </div>
     </div>
-    <?php  }} ?>
-    <?php the_posts_pagination(); ?>
-</article>
+</section>
 
 <?php get_footer(); ?>

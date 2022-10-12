@@ -3,19 +3,24 @@
 ?>
 <?php get_header(); ?>
 
-<article class="container content px-3 py-5 p-md-5">
-    <?php
-        $counter = 0;
-        if ( have_posts() ) {
-            while ( have_posts() ) {
-                the_post();
-                get_template_part('template-parts/content', 'archive');
-            }
-        }
-    ?>
 
-        <?php the_posts_pagination(); ?>
-</article>
+<section>
+    <div class="banner-noticias">
+        <h2 class="fw800 font-big mt-85 white text-center mb-5 noticias-title"><?php pll_e('NOTÍCIAS');?></h2>
+    </div>
+    <div class="box">
+        <div class="noticias-content px-3 mb-5">
+
+        <?php $the_query = new WP_Query( 'showposts' ); ?> <!-- change the number "5" to the number of posts you want to display -->
+        <?php while ($the_query -> have_posts()) : 
+            $the_query -> the_post();
+            get_template_part('template-parts/content', 'card');
+        ?>
+
+        <?php endwhile;?>
+    </div>
+  </div>
+</section>
 
 <?php get_footer(); ?>
 
