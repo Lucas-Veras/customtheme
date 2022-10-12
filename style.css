@@ -18,6 +18,7 @@ Author: Lucas Oliveira
     --home--inital-hover: #6FBE53;
     --faixa: #7DC143;
     --faixa-hover: #679e37;
+    --faixa2: #E5E5E5;
 }
 
 * {
@@ -31,6 +32,10 @@ Author: Lucas Oliveira
     background-color: var(--faixa);
 }
 
+.bg-faixa2 {
+  background-color: var(--faixa2);
+}
+
 .bg-home-initial {
     background-color: var(--home-initial);
 }
@@ -39,16 +44,51 @@ Author: Lucas Oliveira
     font-size: 18px !important;
 }
 
+.cor-font-3 {
+  color: var(--home-initial);
+}
+
+.font-medium {
+  font-size: 25px;
+}
+
 .font-big {
     font-size: 30px;
 }
 
+@media (max-width: 800px) {
+  .font-normal {
+    font-size: 14px !important;
+}
+
+  .font-medium {
+    font-size: 18px;
+  }
+
+  .font-big {
+      font-size: 24px;
+  }
+}
 .fw600 {
-    font-weight: 600;
+    font-weight: 600 !important;
+}
+
+.fw800 {
+  font-weight: 800 !important;
 }
 
 .white {
     color: var(--white);
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+@media (max-width: 800px) {
+  .mb-80 {
+    margin-bottom: 40px;
+  }
 }
 
 
@@ -139,6 +179,15 @@ Author: Lucas Oliveira
     background-color: var(--faixa-hover);
 }
 
+.color-button-segunda-edicao {
+  color: var(--button-footer);
+  text-decoration: none;
+}
+
+.color-button-segunda-edicao:hover {
+  color: var(--button-footer-hover);
+}
+
 @media (max-width: 800px) {
     .img-initial {
         margin: 150px 100px 50px 100px;
@@ -151,6 +200,40 @@ Author: Lucas Oliveira
         padding: 6px 14px;
     }
 }
+
+.noticias-content {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.noticia-card {
+  transition: 0.5s;
+  width: 100%;
+}
+
+.noticia-card-link {
+  text-decoration: none;
+}
+
+.noticia-card-link p {
+  color: #626262;
+}
+
+@media (min-width: 800px) {
+  .noticia-card:hover {
+    width: 120%;
+  }
+}
+
+@media (max-width: 800px) {
+  .noticias-content {
+    flex-direction: column;
+  }
+}
+
+
 
 /* Footer */
 

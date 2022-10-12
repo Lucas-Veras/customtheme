@@ -1,5 +1,4 @@
-    <!-- Post -->
-    <div class="row mt-5">
+<div class="row mt-5">
         <div class="col-md-4 mb-4">
             <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
                 <?php the_post_thumbnail( 'medium-large', array( 'class'=> 'img-fluid')); ?>
