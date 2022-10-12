@@ -1,11 +1,11 @@
 <footer class="footer-color1"> 
     <div class="box">
-        <div class="footer1 text-light row ">
-            <div class="col">
+        <div class="footer1 text-light footer-grid">
+            <div class="">
                 <img class="mb-3" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lais.png" alt="logo lais">
                 <p class="font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
-            <div class="col">
+            <div class=" mb-3">
                 <h2 class="mb-3 font-big">Localização do Evento</h2>
                 <p>Holiday Inn Natal</p>
                 <p>Av. Sen. Salgado Filho, 1906 - Lagoa</p>
@@ -15,7 +15,7 @@
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/local.png" alt="">
                 </a>
             </div>
-            <div class="col">
+            <div class="">
                 <h2 class="mb-3 font-big">Links Úteis</h2>
                 <div class="d-flex flex-column">
                     <a href="" class="links-uteis">Início</a>

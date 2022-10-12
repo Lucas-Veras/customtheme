@@ -36,5 +36,33 @@ function customtheme_register_scripts() {
 add_action('wp_enqueue_scripts', 'customtheme_register_scripts');
 
 require get_template_directory() . '/template-parts/walker.php';
+
+/*<?php get_search_form(); ?>*/
 ?>
 
+<?php
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/bs4navwalker.php';
+
+// Função para menus
+register_nav_menus( array(
+        'primary' => __( 'Menu Principal', 'primary' ),
+) );
+?>
+
+<?php
+// Funcões de Widgets, adiciona sidebar e define divs do widget
+if (function_exists('register_sidebar')) {
+
+	register_sidebar(array(
+		'name' => 'Sidebar',
+		'id'   => 'widget-sidebar',
+		'description'   => 'Insira aqui o widget de categorias',
+		'before_widget' => '<aside class="widget">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>'
+	));
+
+}
+?>
