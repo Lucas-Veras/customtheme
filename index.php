@@ -14,7 +14,7 @@
         <?php $the_query = new WP_Query( 'showposts' ); ?> <!-- change the number "5" to the number of posts you want to display -->
         <?php while ($the_query -> have_posts()) : 
             $the_query -> the_post();
-            get_template_part('template-parts/content', 'card');
+            get_template_part('template-part/content', 'card');
         ?>
 
         <?php endwhile;?>

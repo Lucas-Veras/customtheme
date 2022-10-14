@@ -30,7 +30,7 @@
     <?php $the_query = new WP_Query( 'showposts=3' ); ?> <!-- change the number "5" to the number of posts you want to display -->
       <?php while ($the_query -> have_posts()) : 
         $the_query -> the_post();
-        get_template_part('template-parts/content', 'card');
+        get_template_part('template-part/content', 'card');
       ?>
 
     <?php endwhile;?>
@@ -52,5 +52,65 @@
     echo '</ul>';
   ?>
   </div>
+
+  <?php
+    $benefitArgs = array(
+        'post_type' => 'realizacao',
+        'post_status' => 'publish',
+        'posts_per_page' => 3,
+        'order' => 'ASC',
+    );
+
+    $benefits = new WP_Query($benefitArgs);
+    if ($benefits->have_posts()) {
+        while ($benefits->have_posts()) : $benefits->the_post();
+            get_template_part('template-part/content', 'benefit-card');
+        endwhile;
+    }
+    wp_reset_query();
+  ?>
+
+
+
+  
+
+
+  <section class="instituicoes" id="instituicoes">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-5">
+        <h5 class="text-uppercase text-white mb-3"><?php pll_e('Realização');?></h5>
+        <?php  if( have_rows('realizacao', 'option') ): ?>
+        <?php while ( have_rows('realizacao', 'option') ) : the_row(); ?>
+          <a class="mr-1 mb-2 d-inline-block" href="<?php the_sub_field('site_r');?>" target="_blank">
+            <img src="<?php the_sub_field('logo_r');?>" class="rounded" alt="<?php the_sub_field('nome_r');?>" title="<?php the_sub_field('nome_r');?>" width="135">
+          </a>
+        <?php endwhile; ?>
+        <?php endif; ?>
+      </div>
+      <div class="col-12 mb-5">
+        <h5 class="text-uppercase text-white mb-3"><?php pll_e('Parceiros');?></h5>
+        <?php  if( have_rows('parceiros', 'option') ): ?>
+        <?php while ( have_rows('parceiros', 'option') ) : the_row(); ?>
+          <a class="mr-1 mb-2 d-inline-block" href="<?php the_sub_field('site_p');?>" target="_blank">
+            <img src="<?php the_sub_field('logo_p');?>" class="rounded" alt="<?php the_sub_field('nome_p');?>" title="<?php the_sub_field('nome_p');?>" width="135">
+          </a>
+        <?php endwhile;?>
+      <?php endif; ?>
+      </div>
+      <div class="col-12 mb-5">
+        <h5 class="text-uppercase text-white mb-3"><?php pll_e('Apoio');?></h5>
+        <?php  if( have_rows('apoio', 'option') ): ?>
+        <?php while ( have_rows('apoio', 'option') ) : the_row(); ?>
+          <a class="mr-1 mb-2 d-inline-block" href="<?php the_sub_field('site_a');?>" target="_blank">
+            <img src="<?php the_sub_field('logo_a');?>" class="rounded" alt="<?php the_sub_field('nome_a');?>" title="<?php the_sub_field('nome_a');?>" width="135">
+          </a>
+        <?php endwhile;?>
+      <?php endif; ?>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <?php get_footer(); ?>

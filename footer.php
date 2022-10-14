@@ -18,11 +18,11 @@
             <div class="">
                 <h2 class="mb-3 font-big">Links Úteis</h2>
                 <div class="d-flex flex-column">
-                    <a href="" class="links-uteis">Início</a>
-                    <a href="" class="links-uteis">Sobre</a>
-                    <a href="" class="links-uteis">Programação</a>
-                    <a href="" class="links-uteis">Submissão</a>
-                    <a href="" class="links-uteis">Área do Inscrito</a>
+                    <a href="<?php echo get_site_url();?>" class="links-uteis">Início</a>
+                    <a href="<?php echo get_site_url();?>/sobre/" class="links-uteis">Sobre</a>
+                    <a href="<?php echo get_site_url();?>/programacao/" class="links-uteis">Programação</a>
+                    <a href="<?php echo get_site_url();?>/submissao/" class="links-uteis">Submissão</a>
+                    <a href="https://inscricoes.inovacaotecnologica.lais.huol.ufrn.br/registration/login?next=/" class="links-uteis">Área do Inscrito</a>
                 </div>
             </div>
         </div>
