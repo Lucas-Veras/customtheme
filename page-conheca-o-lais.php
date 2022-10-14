@@ -5,7 +5,7 @@
 
 <section>
     <div class="banner-lais">
-        <h2 class="fw800 font-big mt-85 white text-center mb-5 noticias-title"><?php the_title(); ?></h2>
+        <h2 class="fw800 font-big mt-85 white text-center mb-5 noticias-title">CONHEÇA O LAIS</h2>
     </div>
     <div class="box single-post-grid px-3 mb-3">
         <div>
@@ -23,6 +23,11 @@
                 </blockquote>
             </div>
 		</div>
+  </div>
+</section>
+<section class="instituicoes-lais" id="instituicoes">
+  <div class="box px-3 px-xxl-0">
+    <?php get_template_part('template-part/content', 'instituicoes') ?>
   </div>
 </section>
 

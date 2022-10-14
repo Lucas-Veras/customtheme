@@ -21,6 +21,11 @@
     </div>
   </div>
 </section>
+<section class="instituicoes-noticias" id="instituicoes">
+  <div class="box px-3 px-xxl-0">
+    <?php get_template_part('template-part/content', 'instituicoes') ?>
+  </div>
+</section>
 
 <?php get_footer(); ?>
 

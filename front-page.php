@@ -36,81 +36,66 @@
     <?php endwhile;?>
 
   </div>
-  <div class="text-center">
+  <div class="text-center mb-80">
     <a href="<?php echo get_site_url();?>/blog" class="ver-mais-noticias font-normal inline-block">VER MAIS</a>
   </div>
 </div>
- 
-  <?php 
-    $tags = get_tags(array(
-      'hide_empty' => false
-    ));
-    echo '<ul>';
-    foreach ($tags as $tag) {
-      echo '<li>' . $tag->name . '</li>';
-    }
-    echo '</ul>';
-  ?>
+
+<div class="box section-sobre-home mb-5 px-3 px-xxl-0">
+  <div>
+    <h3 class="font-big cor-font-2 fw800">"É HORA DE SE RECONECTAR. PESSOAS, NATUREZA E CIÊNCIA, JUNTAS, NA CONSTRUÇÃO DE POLÍTICAS HUMANITÁRIAS."</h3>
+    <p>A 3ª Conferência Internacional de Inovação em Saúde segue o objetivo da construção de laços, da busca por conhecimento, a partir do pilar da inovação. Para tal, é preciso ter um olhar resiliente para o Brasil e para o mundo no desenvolvimento de tecnologias em saúde com foco na coletividade, em escala global.</p>
+    <a href="<?php echo get_site_url();?>/sobre" class="ver-mais-noticias inline-block">SAIBA MAIS</a>
   </div>
+  <div class="d-flex justify-content-center">
+    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/section-sobre-home.png" alt="" class="img-section-sobre">
+  </div>
+</div>
 
-  <?php
-    $benefitArgs = array(
-        'post_type' => 'realizacao',
-        'post_status' => 'publish',
-        'posts_per_page' => 3,
-        'order' => 'ASC',
-    );
-
-    $benefits = new WP_Query($benefitArgs);
-    if ($benefits->have_posts()) {
-        while ($benefits->have_posts()) : $benefits->the_post();
-            get_template_part('template-part/content', 'benefit-card');
-        endwhile;
-    }
-    wp_reset_query();
-  ?>
-
-
-
-  
-
-
-  <section class="instituicoes" id="instituicoes">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 mb-5">
-        <h5 class="text-uppercase text-white mb-3"><?php pll_e('Realização');?></h5>
-        <?php  if( have_rows('realizacao', 'option') ): ?>
-        <?php while ( have_rows('realizacao', 'option') ) : the_row(); ?>
-          <a class="mr-1 mb-2 d-inline-block" href="<?php the_sub_field('site_r');?>" target="_blank">
-            <img src="<?php the_sub_field('logo_r');?>" class="rounded" alt="<?php the_sub_field('nome_r');?>" title="<?php the_sub_field('nome_r');?>" width="135">
-          </a>
-        <?php endwhile; ?>
-        <?php endif; ?>
+<section>
+    <div class="banner-noticias p-5 img-reference">
+      <h4 class="fw800 font-medium p-0 white text-center noticias-title"><?php pll_e('BAIXE A PROGRAMAÇÃO DO EVENTO');?></h4>
+      <p class="text-center font-normal white">Todas as informações da 3ª Conferência de Inovação em Saúde!</p>
+      
+      <div class="d-flex justify-content-center">
+        <a href="http://inovacaotecnologica.lais.huol.ufrn.br/wp-content/uploads/2022/04/Programacao-v12.pdf" target="_blank" class="button-download-info">
+          <img src="https://svgur.com/i/fFq.svg" alt="">
+          <span>Baixe Agora</span> 
+        </a>
       </div>
-      <div class="col-12 mb-5">
-        <h5 class="text-uppercase text-white mb-3"><?php pll_e('Parceiros');?></h5>
-        <?php  if( have_rows('parceiros', 'option') ): ?>
-        <?php while ( have_rows('parceiros', 'option') ) : the_row(); ?>
-          <a class="mr-1 mb-2 d-inline-block" href="<?php the_sub_field('site_p');?>" target="_blank">
-            <img src="<?php the_sub_field('logo_p');?>" class="rounded" alt="<?php the_sub_field('nome_p');?>" title="<?php the_sub_field('nome_p');?>" width="135">
-          </a>
-        <?php endwhile;?>
-      <?php endif; ?>
-      </div>
-      <div class="col-12 mb-5">
-        <h5 class="text-uppercase text-white mb-3"><?php pll_e('Apoio');?></h5>
-        <?php  if( have_rows('apoio', 'option') ): ?>
-        <?php while ( have_rows('apoio', 'option') ) : the_row(); ?>
-          <a class="mr-1 mb-2 d-inline-block" href="<?php the_sub_field('site_a');?>" target="_blank">
-            <img src="<?php the_sub_field('logo_a');?>" class="rounded" alt="<?php the_sub_field('nome_a');?>" title="<?php the_sub_field('nome_a');?>" width="135">
-          </a>
-        <?php endwhile;?>
-      <?php endif; ?>
-      </div>
+    </div>
+</section>
+
+<section id="instituicoes">
+  <div class="box px-3 px-xxl-0">
+    <h5 class="text-uppercase cor-font-2 fw800 text-center mb-5 barra"><?php pll_e('PALESTRANTES E CONVIDADOS');?></h5>
+    <div class="convidados-box">
+
+          <?php
+          $realizacaoArgs = array(
+              'post_type' => 'palestrante',
+              'post_status' => 'publish',
+              'posts_per_page' => 50,
+              'order' => 'ASC',
+          );
+
+          $realizacao = new WP_Query($realizacaoArgs);
+          if ($realizacao->have_posts()) {
+              while ($realizacao->have_posts()) : $realizacao->the_post();
+                  get_template_part('template-part/content', 'pessoa');
+              endwhile;
+          }
+          wp_reset_query();
+          ?>
     </div>
   </div>
 </section>
 
+<section class="instituicoes" id="instituicoes">
+  <div class="box px-3 px-xxl-0">
+    <?php get_template_part('template-part/content', 'instituicoes') ?>
+  </div>
+</section>
+  
 
 <?php get_footer(); ?>

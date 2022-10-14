@@ -1,11 +1,11 @@
 <?php
-// Template Name: sobre
+// Template Name: submissão
 ?>
 <?php get_header(); ?>
 
 <section>
-    <div class="banner-sobre">
-        <h2 class="fw800 font-big mt-85 white text-center mb-5 noticias-title"><?php the_title(); ?></h2>
+    <div class="banner-submissao">
+        <h2 class="fw800 font-big mt-85 white text-center mb-5 noticias-title">SUBMISSÃO DE TRABALHOS</h2>
     </div>
     <div class="box single-post-grid px-3 mb-3">
         <div>
@@ -25,7 +25,7 @@
 		</div>
   </div>
 </section>
-<section class="instituicoes-sobre" id="instituicoes">
+<section class="instituicoes-submissao" id="instituicoes">
   <div class="box px-3 px-xxl-0">
     <?php get_template_part('template-part/content', 'instituicoes') ?>
   </div>

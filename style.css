@@ -20,9 +20,10 @@ Author: Lucas Oliveira
     --faixa-hover: #679e37;
     --faixa2: #E5E5E5;
     --single-text: #333;
-    --backgorund-color-blog: #1B75BC;
+    --background-color-blog: #1B75BC;
     --background-color-sobre: #D88CB6;
     --background-color-lais: #E0C22A;
+    --background-color-submissao: #EA9421;
 }
 
 * {
@@ -44,6 +45,10 @@ Author: Lucas Oliveira
     background-color: var(--home-initial);
 }
 
+.font-small {
+  font-size: 1rem;
+}
+
 .font-normal {
     font-size: 18px !important;
 }
@@ -51,6 +56,12 @@ Author: Lucas Oliveira
 .cor-font-3 {
   color: var(--home-initial);
 }
+
+.cor-font-2 {
+  color: var(--home--inital-hover);
+}
+
+
 
 .font-medium {
   font-size: 25px;
@@ -195,6 +206,128 @@ Author: Lucas Oliveira
     }
 }
 
+/* front page - section sobre */
+
+.section-sobre-home {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+}
+
+.img-section-sobre {
+  width: 500px;
+}
+
+@media (max-width: 1100px) {
+  .section-sobre-home {
+    grid-template-columns: 1fr;
+
+  }
+}
+
+/* Convidados - pessoa */
+
+.convidados-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+
+
+
+.barra {
+  position: relative;
+}
+
+.barra::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: #EA9421;
+  bottom: -15px;
+  left: calc(50% - 20px);
+}
+
+.barra::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: -13px;
+  left: calc(50% - 60px);
+}
+
+.bandeira-reference {
+  position: relative;
+}
+
+.bandeira {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width:1100px) {
+  .convidados-box {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .bandeira {
+    right: 90px;
+  }
+}
+
+/* front page - download */
+
+.button-download-info {
+  text-decoration: none;
+  background-color: #F8FAFC;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.button-download-info img {
+  width: 30px;
+}
+
+.button-download-info span {
+  color: #000;
+}
+
+.img-reference {
+  position: relative;
+}
+
+.img-reference:before{
+  content: "";
+  background-image: url("assets/images/celular.png");
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  display: block;
+  top: -10%;
+  left: 15%;
+}
+
+@media (max-width: 1300px) {
+  .img-reference:before {
+    left: 2%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .img-reference:before {
+    display: none;
+  }
+}
+
 /* front page - noticias */
 
 .noticias-content {
@@ -245,11 +378,19 @@ Author: Lucas Oliveira
 /* index - Archive - noticias*/
 
 .banner-noticias {
-  background-color: var(--backgorund-color-blog);
+  background-color: var(--background-color-blog);
   background-image: url("assets/images/fundo-noticia1.svg"), url("assets/images/fundo-noticia2.svg");
   background-position: left bottom, right top;
   background-size: 30%;
   background-repeat: no-repeat;
+}
+
+.instituicoes-noticias {
+  background-color: var(--background-color-blog);
+  background-image: url("assets/images/fundo-instituicoes-noticias.svg");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 50%;
 }
 
 @media (max-width: 850px) {
@@ -272,6 +413,14 @@ Author: Lucas Oliveira
   background-repeat: no-repeat;
 }
 
+.instituicoes-sobre {
+  background-color: var(--background-color-sobre);
+  background-image: url("assets/images/fundo-instituicoes-sobre.svg");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+
 @media (max-width: 850px) {
   .banner-sobre {
     background-size: 50%;
@@ -286,6 +435,38 @@ Author: Lucas Oliveira
   background-position: left bottom, right top;
   background-size: 30%;
   background-repeat: no-repeat;
+}
+
+.instituicoes-lais {
+  background-color: var(--background-color-lais);
+  background-image: url("assets/images/fundo-instituicoes-lais.svg");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+
+@media (max-width: 850px) {
+  .banner-lais {
+    background-size: 50%;
+  }
+}
+
+/* submissão */
+
+.banner-submissao {
+  background-color: var(--background-color-submissao);
+  background-image: url("assets/images/fundo-submissao2.svg"), url("assets/images/fundo-submissao1.svg");
+  background-position: left bottom, right top;
+  background-size: 30%;
+  background-repeat: no-repeat;
+}
+
+.instituicoes-submissao {
+  background-color: var(--background-color-submissao);
+  background-image: url("assets/images/fundo-instituicoes-lais.svg");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 50%;
 }
 
 @media (max-width: 850px) {
@@ -975,19 +1156,6 @@ h4.section-title {
 .header-center .lnr {
   color: #7DC143;
   margin-right: 10px;
-}
-
-.banner-submissao {
-  background: #EA9421;
-  color: #fff;
-  padding: 0;
-}
-.banner-submissao h3 {
-  font-weight: 700;
-  padding-top: 5px;
-  font-size: 1.9em;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 .btn-laranja {

@@ -70,3 +70,16 @@
     } // end while
 } // end if
 ?>
+
+
+<?php //tags
+    $tags = get_tags(array(
+      'hide_empty' => false
+    ));
+    echo '<ul>';
+    foreach ($tags as $tag) {
+      echo '<li>' . $tag->name . '</li>';
+    }
+    echo '</ul>';
+  ?>
+  </div>
