@@ -3,7 +3,7 @@
 ?>
 <?php get_header(); ?>
 
-<section>
+<section class="mb-0 pb-0">
     <div class="banner-sobre">
         <h2 class="fw800 font-big mt-85 white text-center mb-5 noticias-title"><?php the_title(); ?></h2>
     </div>
@@ -24,23 +24,8 @@
             </div>
 		</div>
   </div>
-  <div>
-    <?php
-      $realizacaoArgs = array(
-          'post_type' => 'palestrante',
-          'post_status' => 'publish',
-          'posts_per_page' => 50,
-          'order' => 'ASC',
-      );
-
-      $realizacao = new WP_Query($realizacaoArgs);
-      if ($realizacao->have_posts()) {
-          while ($realizacao->have_posts()) : $realizacao->the_post();
-            get_template_part('template-part/content', 'organizacao');
-          endwhile;
-      }
-      wp_reset_query();
-    ?>
+  <div class="organizacao mb-0 pb-4">
+    <?php get_template_part('template-part/content', 'organizacao'); ?>
   </div>
 </section>
 <section class="instituicoes-sobre" id="instituicoes">
