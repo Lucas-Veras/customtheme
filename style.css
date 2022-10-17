@@ -484,6 +484,23 @@ Author: Lucas Oliveira
   }
 }
 
+.programacao-box {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.accordion-button::after {
+  content: '' !important;
+}
+
+@media (max-width: 800px) {
+  .programacao-box {
+    flex-direction: column;
+    
+  }
+}
+
 /* Conheça o lais */
 
 .banner-lais {
