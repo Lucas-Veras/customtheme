@@ -3,7 +3,7 @@
 ?>
 
 <div class="box">
-  <h2 class="fw800 font-big cor-font-3 text-center mb-5"><?php pll_e('ÚLTIMAS NOTÍCIAS');?></h2>
+  <h2 class="fw800 font-big cor-font-3 text-center mb-5">ÚLTIMAS NOTÍCIAS</h2>
   <div class="noticias-content px-3 mb-5">
 
     <?php $the_query = new WP_Query( 'showposts=3' ); ?> <!-- change the number "5" to the number of posts you want to display -->

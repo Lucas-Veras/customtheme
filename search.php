@@ -5,7 +5,7 @@
 
 <section>
     <div class="banner-noticias">
-        <h2 class="fw800 font-big mt-85 white text-center mb-5 noticias-title"><?php pll_e('NOTÍCIAS');?></h2>
+        <h2 class="fw800 font-big mt-85 white text-center mb-5 noticias-title">NOTÍCIAS</h2>
     </div>
     <div class="box px-xxl-0 px-3">
         <h5 class="mb-5">Pesquisou por: <?php echo get_search_query(); ?></h5>

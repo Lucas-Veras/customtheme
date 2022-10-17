@@ -24,6 +24,7 @@ Author: Lucas Oliveira
     --background-color-sobre: #D88CB6;
     --background-color-lais: #E0C22A;
     --background-color-submissao: #EA9421;
+    --background-color-programacao: #6FBE53;
 }
 
 * {
@@ -60,8 +61,6 @@ Author: Lucas Oliveira
 .cor-font-2 {
   color: var(--home--inital-hover);
 }
-
-
 
 .font-medium {
   font-size: 25px;
@@ -101,14 +100,28 @@ Author: Lucas Oliveira
 }
 
 .mt-85 {
-  margin-top: 85px;
+  margin-top: 70px;
+}
+
+.logoLais {
+  width: 150px;
 }
 
 @media (max-width: 800px) {
   .mb-80 {
     margin-bottom: 40px;
   }
+
+  .mt-85 {
+    margin-top: 50px;
+  }
+
+  .logoLais {
+    width: 100px;
+  }
 }
+
+
 
 
 
@@ -215,7 +228,7 @@ Author: Lucas Oliveira
 }
 
 .img-section-sobre {
-  width: 500px;
+  width: 100%;
 }
 
 @media (max-width: 1100px) {
@@ -269,7 +282,7 @@ Author: Lucas Oliveira
 .bandeira {
   position: absolute;
   bottom: 0;
-  right: 20px;
+  right: 2%;
   width: 40px;
   height: 40px;
 }
@@ -280,7 +293,14 @@ Author: Lucas Oliveira
     gap: 10px;
   }
   .bandeira {
-    right: 90px;
+    right: 25%;
+  }
+}
+
+@media (max-width:800px) {
+  .convidados-box {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
 
@@ -419,6 +439,22 @@ Author: Lucas Oliveira
   background-position: right center;
   background-repeat: no-repeat;
   background-size: 50%;
+}
+
+@media (max-width: 850px) {
+  .banner-sobre {
+    background-size: 50%;
+  }
+}
+
+/* programação */
+
+.banner-programacao {
+  background-color: var(--background-color-programacao);
+  background-image: url("assets/images/fundo-programacao2.svg"), url("assets/images/fundo-programacao1.svg");
+  background-position: left bottom, right top;
+  background-size: 30%;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 850px) {
@@ -2139,4 +2175,23 @@ blockquote.right {
   margin-right: 0;
   width: 33%;
   float: right;
+}
+
+
+#menu-item-81 a {
+  background-color: #EA9421 !important;
+  color: white !important;
+}
+
+.dropdown-toggle::after {
+  color: #3EA05D;
+}
+
+.navbar-nav > li.nav-item:last-child > .nav-link {
+  background: white;
+}
+
+#langs-li {
+  list-style-type: none;
+  padding-left: 10px;
 }

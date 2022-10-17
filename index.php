@@ -6,7 +6,7 @@
 
 <section>
     <div class="banner-noticias">
-        <h2 class="fw800 font-big mt-85 white text-center mb-5 noticias-title"><?php pll_e('NOTÍCIAS');?></h2>
+        <h2 class="fw800 font-big mt-85 white text-center mb-5 noticias-title">NOTÍCIAS</h2>
     </div>
     <div class="box">
         <div class="noticias-content px-3 mb-5">

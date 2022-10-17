@@ -1,7 +1,7 @@
 
 <div class="row">
     <div class="col-12 mb-5">
-        <h5 class="text-uppercase text-white mb-3"><?php pll_e('Realização');?></h5>
+        <h5 class="text-uppercase text-white mb-3">Realização</h5>
         <?php
         $realizacaoArgs = array(
             'post_type' => 'realizacao',
@@ -19,7 +19,7 @@
         ?>
     </div>
     <div class="col-12 mb-5">
-        <h5 class="text-uppercase text-white mb-3"><?php pll_e('Parceiros');?></h5>
+        <h5 class="text-uppercase text-white mb-3">Parceiros</h5>
         <?php
         $realizacaoArgs = array(
             'post_type' => 'parceiro',
@@ -37,7 +37,7 @@
         ?>
     </div>
     <div class="col-12 mb-5">
-        <h5 class="text-uppercase text-white mb-3"><?php pll_e('Apoio');?></h5>
+        <h5 class="text-uppercase text-white mb-3">Apoio</h5>
         <?php
         $realizacaoArgs = array(
             'post_type' => 'apoio',

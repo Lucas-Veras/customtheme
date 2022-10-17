@@ -46,9 +46,9 @@
   <div id="fb-root"></div>
   <header>
     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white" id="mainNav">
-    <div class="container-fluid px-5">
-      <a class="navbar-brand js-scroll-trigger  mr-0" href="<?php echo get_site_url();?>">
-          <img src="<?php echo get_template_directory_uri()?>/assets/images/logoLais.png" class="nav-image no-filter img-fluid" alt="LAIS(HUOL)" >
+    <div class="container-fluid px-xxl-5 px-3">
+      <a class="navbar-brand js-scroll-trigger navbar-brand  mr-0" href="<?php echo get_site_url();?>">
+          <img src="<?php echo get_template_directory_uri()?>/assets/images/logoLais.png" class="d-inline-block align-text-top nav-image logoLais no-filter img-fluid" alt="LAIS(HUOL)" >
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -67,7 +67,17 @@
             'fallback_cb'     => 'bs4navwalker::fallback',
             'walker'          => new bs4navwalker()
           ]);
-          ?>
+        ?>
+        <li class="nav-item dropdown" id="langs-li">
+          <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Portuguese" class="nav-link dropdown-toggle glink nturl notranslate" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="//customtheme.test/wp-content/plugins/gtranslate/flags/svg/pt-br.svg"  height="24" width="24" alt="Portuguese" />
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="dropdown-item glink nturl notranslate"><img src="//customtheme.test/wp-content/plugins/gtranslate/flags/svg/en-us.svg" height="24" width="24" alt="English" /></a>
+            </li>
+          </ul>
+        </li>
       </div>
      </div>
    </nav>
